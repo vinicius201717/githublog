@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const PostCardContainer = styled.article`
+export const PostCardContainer = styled(Link)`
     width: 26rem;
     flex-shrink: 0;
     padding: 2rem;
@@ -8,6 +9,7 @@ export const PostCardContainer = styled.article`
     flex-direction: column;
     gap: 1rem;
     position: relative;
+    text-decoration: none;
 
     border-radius: 10px;
     background: ${props => props.theme["base-post"]};

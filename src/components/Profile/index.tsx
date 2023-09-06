@@ -1,34 +1,39 @@
 import { ProfileContainer, ProfilePhoto, ProfileInfo } from "./styles";
 
-import avatar from '../../assets/avatar.png'
+// import avatar from '../../assets/avatar.png'
 import { GithubLogo, ArrowLineUpRight, Buildings, UsersThree } from "phosphor-react";
+import { useContext } from "react";
+import { IssuesContext } from "../../contexts/IssuesContext";
 
 export function Profile() {
+
+    const { user } = useContext(IssuesContext)    
+
     return (
         <ProfileContainer>
             <ProfilePhoto>
-                <img src={avatar} alt="" />
+                {
+                    user && <img src={user.avatar} alt="" />        
+                }               
             </ProfilePhoto>
             <ProfileInfo>
-                <a href="">GITHUB <ArrowLineUpRight /></a>
-                <h4>Cameron Willianmson</h4>
+                <a href={user && user.url}>GITHUB <ArrowLineUpRight /></a>
+                <h4>{user && user.name}</h4>
                 <span>
-                    Tristique volutpat pulvinar vel massa, pellentesque egestas. 
-                    Eu viverra massa quam dignissim aenean malesuada suscipit. 
-                    Nunc, volutpat pulvinar vel mass.
+                    {user && user.bio}
                 </span>
                 <div>
                     <div>
                          <GithubLogo />
-                        <span>cameronwll</span>
+                        <span>{user && user.login}</span>
                     </div> 
                     <div>
                          <Buildings />
-                        <span>Rocketseat</span>
+                        <span>{user &&  user.company}</span>
                     </div>                   
                     <div>
                          <UsersThree />
-                        <span>32 seguidores</span>
+                        <span>{user && user.followers}</span>
                     </div> 
                 </div>
             </ProfileInfo>

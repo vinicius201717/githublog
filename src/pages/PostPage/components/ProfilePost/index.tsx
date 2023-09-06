@@ -1,21 +1,27 @@
 import { ProfilePostContainer, ProfilePostInfo } from "./styles";
 import { ArrowLineUpRight, ArrowArcLeft, GithubLogo, Calendar, Chat } from "phosphor-react";
 
+import { Link } from 'react-router-dom'
+import { IssuesInterface } from "src/contexts/IssuesContext";
 
-export function ProfilePost () {
+interface IssueProps {
+    issue: IssuesInterface
+}
+
+export function ProfilePost ({issue}: IssueProps) {    
     return (
         <ProfilePostContainer>
             <div>
-                <a href="">
+                <Link to="/">
                     <ArrowArcLeft />
                     voltar
-                </a>
+                </Link>
                 <a href="">
                     VER NO GITHUB 
                     <ArrowLineUpRight />
                 </a>
             </div>
-            <h1>JavaScript data types and data structures</h1>
+            <h1>{issue.title}</h1>
             <ProfilePostInfo>
                 <div>
                     <GithubLogo />

@@ -4,12 +4,15 @@ import { ThemeProvider } from "styled-components"
 import { DefaultTheme } from "./styles/DefaultTheme"
 import { GlobalStyle } from "./styles/Global"
 import { Router } from "./Router"
+import { IssuesProvider } from './contexts/IssuesContext'
 
 function App() {
   return (
     <ThemeProvider theme={DefaultTheme}>
       <BrowserRouter>
-        <Router /> 
+        <IssuesProvider>
+          <Router />
+        </IssuesProvider>        
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>

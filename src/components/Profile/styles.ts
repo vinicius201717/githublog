@@ -15,16 +15,22 @@ export const ProfileContainer = styled.section`
     box-shadow: 0 2px 28px 0px rgba(0, 0, 0, 0.20);
 `
 export const ProfilePhoto = styled.div`
-    width: 148px;
-    height: 148px;
+    width: 9.25rem;
+    height: 9.25rem;
     flex-shrink: 0;
     border-radius: 8px;
+
+    img {
+        width: 9.25rem;
+        height: 9.25rem;
+    }
 `
 export const ProfileInfo = styled.div`
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 0.5rem 2rem;
-    gap: 0.5rem;
+    gap: 1rem;
     position: relative;
 
     a {

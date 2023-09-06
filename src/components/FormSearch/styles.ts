@@ -40,5 +40,7 @@ export const FormSearchContainer = styled.form`
         background: ${props => props.theme["base-input"]};
         border-radius: 6px;
         border: 1px solid ${props => props.theme["base-border"]};
+        color: ${props => props.theme["base-text"]};
+        font-family: 'Nunito';
     }
 `
